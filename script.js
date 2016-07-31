@@ -4,14 +4,13 @@ var word = ['A','B','A','L','O','N','E'];
 
 function updateWord() {
   $("#word").empty();
-  for (var i = 0; i < word.length; i++) {
-    var letter = word[i];
+  word.forEach(function (letter) {
     if (guesses.includes(letter)) {
       $("#word").append(letter);
     } else {
       $("#word").append("_");
     }
-  }
+  });
 }
 
 function updateHangman() {
