@@ -18,13 +18,9 @@ function updateHangman() {
 }
 
 function hasWon() {
-  for(var i = 0; i < word.length; i++) {
-    var letter = word[i];
-    if (guesses.includes(letter) === false) {
-      return false;
-    }
-  }
-  return true;
+  return word.every(function (letter) {
+    return guesses.includes(letter);
+  });
 }
 
 function hasLost() {
