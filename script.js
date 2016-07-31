@@ -1,11 +1,11 @@
 var guesses = [];
 var misses = 0;
-var word = "ABALONE";
+var word = ['A','B','A','L','O','N','E'];
 
 function updateWord() {
   $("#word").empty();
   for (var i = 0; i < word.length; i++) {
-    var letter = word.charAt(i);
+    var letter = word[i];
     if (guesses.includes(letter)) {
       $("#word").append(letter);
     } else {
@@ -20,7 +20,7 @@ function updateHangman() {
 
 function hasWon() {
   for(var i = 0; i < word.length; i++) {
-    var letter = word.charAt(i);
+    var letter = word[i];
     if (guesses.includes(letter) === false) {
       return false;
     }
