@@ -21,7 +21,7 @@ function updateHangman() {
 function hasWon() {
   for(var i = 0; i < word.length; i++) {
     var letter = word.charAt(i);
-    if (guesses.includes(letter) == false) {
+    if (guesses.includes(letter) === false) {
       return false;
     }
   }
@@ -47,7 +47,7 @@ function guessLetter(letter) {
 
   guesses.push(letter);
 
-  if (word.includes(letter) == false) {
+  if (word.includes(letter) === false) {
     misses++;
   }
 }
